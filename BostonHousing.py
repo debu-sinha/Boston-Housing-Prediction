@@ -1,4 +1,25 @@
 # Databricks notebook source
+# MAGIC %md
+# MAGIC #Predicting raw csv to prodution regressor with MLflow
+# MAGIC 
+# MAGIC ### Data
+# MAGIC The modified Boston housing dataset consists of 489 data points, with each datapoint having 3 features. This dataset is a modified version of the Boston Housing dataset found on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Housing).
+# MAGIC 
+# MAGIC **Features**
+# MAGIC 1.  `RM`: average number of rooms per dwelling
+# MAGIC 2. `LSTAT`: percentage of population considered lower status
+# MAGIC 3. `PTRATIO`: pupil-teacher ratio by town
+# MAGIC 
+# MAGIC **Target Variable**
+# MAGIC 4. `MEDV`: median value of owner-occupied homes
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC #1) Import libraries
+
+# COMMAND ----------
+
 import pandas as pd
 import seaborn as sns
 import numpy as np
@@ -9,7 +30,15 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
-%matplotlib inline
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC # 2) Read raw input file.
+
+# COMMAND ----------
+
+# MAGIC %fs
+# MAGIC ls /databricks
 
 # COMMAND ----------
 
